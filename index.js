@@ -110,5 +110,5 @@ ${badge[0].badge}
 <p>Feel free to reach me with additional questions @ ${data.email}.</p> \n
 <p>Check out my GitHub profile: <a href="https://github.com/${data.username}">${data.username}</a></p> 
 ` 
-    return readme;
+  return readme;
 };
