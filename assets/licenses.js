@@ -97,10 +97,14 @@ const licenseBadges = [
 
 function getLicenses(){
     licenseBadges.forEach(function(index){
-        console.log(index.name);
         licenseArr.push(index.name);
     });
 };
 
 getLicenses();
 
+module.exports = {
+    licenseArr: licenseArr,
+    licenseBadges: licenseBadges
+  };
+  

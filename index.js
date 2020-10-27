@@ -1,6 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const licenses = require("licenses");
+const licenses = require("./assets/licenses.js");
 
 inquirer.prompt([
   {
@@ -37,7 +37,7 @@ inquirer.prompt([
     type: "list",
     message: "Choose a license for your application.",
     name: "license",
-    choices: getLicenses()
+    choices: licenses.licenseArr
   },
   {
     type: "input",
@@ -52,6 +52,7 @@ inquirer.prompt([
 ]).then(function(data) {
 
   const filename = "_README.md";
+  const licenseFile = "_LICENSE.md";
 
   fs.writeFile(filename, generateReadme(data), function(err) {
 
@@ -66,11 +67,13 @@ inquirer.prompt([
 
 
 function generateReadme(data){
+    let badge = licenses.licenseBadges.filter(license => license.name === data.license);
     let readme = `# ${data.title} \n
 \n
 ## Description \n
 \n
 <p>${data.description}</p> \n
+${badge[0].badge}
 \n
 ## Table of Contents \n
 \n
@@ -91,7 +94,8 @@ function generateReadme(data){
 \n
 ## License \n
 \n 
-<p>See the [LICENSE](LICENSE.md) file for license rights and limitations (${data.license}).</p> \n
+<p>This project is licensed under the terms of the ${data.license}</p> \n
+${badge[0].badge}
 \n
 ## Contributing \n
 \n

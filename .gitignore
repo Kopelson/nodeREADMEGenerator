@@ -1,5 +1,9 @@
+# Dependency
 DS_Store
 node_modules
+
+# User generated README's
+_README
 
 # Logs
 logs
