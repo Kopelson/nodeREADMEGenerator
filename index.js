@@ -51,8 +51,8 @@ inquirer.prompt([
   },    
 ]).then(function(data) {
 
-  const filename = "_README.md";
-  const licenseFile = "_LICENSE.md";
+  const filename = "README.md";
+  
 
   fs.writeFile(filename, generateReadme(data), function(err) {
 
