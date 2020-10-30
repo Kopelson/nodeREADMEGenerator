@@ -1,5 +1,6 @@
+//this initializes an array of licenses
 const licenseArr = [];
-
+//this stores an array of license objects
 const licenseBadges = [
     {
         name: "Apache 2.0 License",
@@ -94,7 +95,7 @@ const licenseBadges = [
         badge:""
     }
 ];
-
+//this function loops through the licenseBadges array and pushes the names of each license to the licenseArr
 function getLicenses(){
     licenseBadges.forEach(function(index){
         licenseArr.push(index.name);
@@ -102,7 +103,7 @@ function getLicenses(){
 };
 
 getLicenses();
-
+//this exports the licenseArr that contains the names of the licenses, and the array of licenses objects
 module.exports = {
     licenseArr: licenseArr,
     licenseBadges: licenseBadges
