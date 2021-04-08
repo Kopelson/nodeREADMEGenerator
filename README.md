@@ -1,7 +1,6 @@
-# Node README Generator
+# Node README Generator :
 
-## Description
- <p>This is a terminal based application to produce professional looking README md files. </p>
+This is a terminal based application to produce professional looking README md files.
 
 ## Overview
  * Youtube video on how to use - https://www.youtube.com/watch?v=24iaJGACyec
